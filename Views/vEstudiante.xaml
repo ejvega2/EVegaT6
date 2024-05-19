@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EVegaT6.Views.vEstudiante"
              Title="vEstudiante">
-    <VerticalStackLayout>
+    <VerticalStackLayout Spacing = "25">
+        
         <Label 
             Text="Consumo Rest" 
             FontSize="24"
@@ -24,7 +25,7 @@
             <Label Text="Edad" FontAttributes="Bold" HorizontalTextAlignment="Center" Grid.Column="3" />
         </Grid>
 
-        <ListView x:Name="listEstudiantes" Grid.Row="1" Margin="10">
+        <ListView x:Name="listEstudiantes" ItemSelected="listEstudiantes_ItemSelected" Grid.Row="1" Margin="10">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -47,5 +48,10 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+
+        <Button x:Name="btnAgregar"
+                Text="Agregar Estudiante"
+                Clicked="btnAgregar_Clicked" />
+
     </VerticalStackLayout>
 </ContentPage>
